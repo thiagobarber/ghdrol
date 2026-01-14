@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GHDROL - Oferta Exclusiva</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .heading-font {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 2px;
+    }
+    
+    .gradient-bg {
+      background: radial-gradient(ellipse at top, #1a1a1a 0%, #0a0a0a 50%, #000000 100%);
+      position: relative;
+    }
+    
+    .gradient-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 165, 0, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .timer-box {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 204, 0, 0.3);
+      box-shadow: 0 8px 32px rgba(255, 204, 0, 0.1);
+    }
+    
+    .cta-button {
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+      box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 50px rgba(255, 215, 0, 0.6);
+    }
+    
+    .product-glow {
+      box-shadow: 0 0 60px rgba(255, 204, 0, 0.3);
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .animate-header {
+      animation: fadeInDown 0.8s ease-out;
+    }
+    
+    .animate-title {
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+    
+    .animate-subtitle {
+      animation: fadeInUp 1s ease-out 0.5s both;
+    }
+    
+    .animate-product {
+      animation: scaleIn 1.2s ease-out 0.7s both;
+    }
+    
+    .animate-cta {
+      animation: fadeInUp 1s ease-out 1s both;
+    }
+    
+    .animate-footer {
+      animation: fadeInUp 0.8s ease-out 1.2s both;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full gradient-bg text-white overflow-auto">
+  <div class="w-full min-h-full flex flex-col" style="position: relative; z-index: 1;"><!-- Header com Timer -->
+   <header class="w-full py-3 px-4 bg-black bg-opacity-80 border-b border-yellow-400 animate-header">
+    <div class="max-w-6xl mx-auto text-center">
+     <p class="text-yellow-400 text-xs uppercase tracking-wider mb-2 font-semibold">OFERTA EXPIRA EM</p>
+     <div class="flex justify-center items-center">
+      <div class="flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-orange-500 px-6 py-2 rounded-lg"><span id="minutes" class="text-black font-bold text-2xl">15</span> <span class="text-black font-bold text-xl">:</span> <span id="seconds" class="text-black font-bold text-2xl">00</span>
+      </div>
+     </div>
+    </div>
+   </header><!-- Seção do Produto -->
+   <main class="flex-1 w-full py-4 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 id="product-title" class="heading-font text-5xl md:text-7xl text-white mb-3 animate-title">GHDROL</h2>
+     <p id="product-subtitle" class="text-xl md:text-2xl mb-6 font-bold animate-subtitle" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);">O Suplemento Mais Potente do Mercado</p><!-- Imagem do Produto -->
+     <div class="mb-4 max-w-md mx-auto relative animate-product">
+      <div class="absolute inset-0 bg-gradient-radial from-yellow-400 via-orange-500 to-transparent opacity-30 blur-3xl"></div><img src="https://i.imgur.com/xojcrI3.png" alt="GHDROL - Suplemento Premium" class="w-full h-auto relative z-10" style="filter: drop-shadow(0 0 60px rgba(255, 215, 0, 0.5));" onerror="this.src=''; this.alt='Imagem do produto não disponível'; this.style.display='none';">
+     </div><!-- CTA Button --> <a href="https://app.monetizze.com.br/r/BZP1880422" target="_blank" rel="noopener noreferrer" class="cta-button inline-block px-12 py-6 rounded-full heading-font text-3xl md:text-4xl text-black no-underline animate-cta"> <span id="cta-button-text">QUERO MEU GHDROL</span> </a>
+    </div>
+   </main><!-- Footer -->
+   <footer class="w-full py-8 px-4 border-t border-yellow-400 bg-gradient-to-b from-transparent to-black animate-footer">
+    <div class="max-w-4xl mx-auto text-center">
+     <p id="company-name" class="mb-2 font-bold text-white text-base">SUPLEMENTOS ELITE COMERCIO LTDA</p>
+     <p id="cnpj" class="mb-3 text-gray-300 text-sm">CNPJ: 45.123.456/0001-78</p>
+     <p id="footer-text" class="mb-6 text-gray-400 text-sm">Todos os direitos reservados © 2025</p>
+     <div class="border-t border-gray-700 pt-4">
+      <p class="text-xs text-gray-500 mb-2">Este site não faz parte do website do Facebook ou Facebook Inc. Além disso, este site não é endossado pelo Facebook de forma alguma. FACEBOOK é uma marca comercial da FACEBOOK, Inc.</p>
+      <p class="text-xs text-gray-600">Resultados podem variar de pessoa para pessoa. Consulte um profissional de saúde antes de usar qualquer suplemento.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      timer_title: "OFERTA ESPECIAL TERMINA EM:",
+      product_title: "GHDROL",
+      product_subtitle: "O Suplemento Mais Potente do Mercado",
+      cta_button_text: "QUERO MEU GHDROL",
+      company_name: "SUPLEMENTOS ELITE COMERCIO LTDA",
+      cnpj: "CNPJ: 45.123.456/0001-78",
+      footer_text: "Todos os direitos reservados © 2025",
+      background_color: "#000000",
+      accent_color: "#FFD700",
+      text_color: "#FFFFFF",
+      button_color: "#FFD700",
+      font_family: "Inter",
+      font_size: 16
+    };
+
+    // Timer countdown
+    let timeLeft = 15 * 60; // 15 minutos em segundos
+
+    function updateTimer() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      
+      if (timeLeft > 0) {
+        timeLeft--;
+      } else {
+        timeLeft = 15 * 60; // Reinicia o timer
+      }
+    }
+
+    // Atualiza o timer a cada segundo
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    async function onConfigChange(config) {
+      const timerTitle = document.getElementById('timer-title');
+      const productTitle = document.getElementById('product-title');
+      const productSubtitle = document.getElementById('product-subtitle');
+      const ctaButtonText = document.getElementById('cta-button-text');
+      const companyName = document.getElementById('company-name');
+      const cnpj = document.getElementById('cnpj');
+      const footerText = document.getElementById('footer-text');
+
+      if (timerTitle) timerTitle.textContent = config.timer_title || defaultConfig.timer_title;
+      if (productTitle) productTitle.textContent = config.product_title || defaultConfig.product_title;
+      if (productSubtitle) productSubtitle.textContent = config.product_subtitle || defaultConfig.product_subtitle;
+      if (ctaButtonText) ctaButtonText.textContent = config.cta_button_text || defaultConfig.cta_button_text;
+      if (companyName) companyName.textContent = config.company_name || defaultConfig.company_name;
+      if (cnpj) cnpj.textContent = config.cnpj || defaultConfig.cnpj;
+      if (footerText) footerText.textContent = config.footer_text || defaultConfig.footer_text;
+
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseFontStack = 'Arial, sans-serif';
+      const baseSize = config.font_size || defaultConfig.font_size;
+
+      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      timerTitle.style.fontSize = `${baseSize * 2.5}px`;
+      productTitle.style.fontSize = `${baseSize * 3.5}px`;
+      productSubtitle.style.fontSize = `${baseSize * 1.5}px`;
+      ctaButtonText.style.fontSize = `${baseSize * 2}px`;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              config.accent_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ accent_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["timer_title", config.timer_title || defaultConfig.timer_title],
+        ["product_title", config.product_title || defaultConfig.product_title],
+        ["product_subtitle", config.product_subtitle || defaultConfig.product_subtitle],
+        ["cta_button_text", config.cta_button_text || defaultConfig.cta_button_text],
+        ["company_name", config.company_name || defaultConfig.company_name],
+        ["cnpj", config.cnpj || defaultConfig.cnpj],
+        ["footer_text", config.footer_text || defaultConfig.footer_text]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bded02aa457f1b1',t:'MTc2ODQxMTMyMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
