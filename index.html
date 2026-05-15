@@ -1,58 +1,185 @@
 <!doctype html>
 <html lang="pt-BR" class="h-full">
- <head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="/_sdk/element_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    html, body { height: 100%; margin: 0; font-family: 'DM Sans', sans-serif; }
-    .backdrop { background: rgba(0,0,0,0.6); }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .backdrop {
+      background: rgba(0,0,0,0.6);
+    }
+
+    body {
+      box-sizing: border-box;
+    }
   </style>
-  <style>body { box-sizing: border-box; }</style>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="h-full w-full relative overflow-hidden">
-  <img src="https://imgur.com/k6EZcin" alt="Background" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="console.error('Image failed:', this.src); this.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'; this.alt='Imagem indisponível';">
+
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+</head>
+
+<body class="h-full w-full relative overflow-hidden">
+
+  <!-- IMAGEM DE FUNDO -->
+  <img
+    src="https://i.imgur.com/NOqTcL3.jpeg"
+    alt="Background"
+    loading="lazy"
+    class="absolute inset-0 w-full h-full object-cover"
+    onerror="this.src='https://i.imgur.com/NOqTcL3.png';"
+  >
+
+  <!-- OVERLAY -->
   <div class="absolute inset-0 backdrop flex items-center justify-center p-4">
-   <div class="bg-white rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden">
-    <div class="flex items-center justify-between px-5 pt-5 pb-2">
-     <h2 id="modal-title" class="text-lg font-bold text-gray-900">Política de Privacidade</h2><a href="https://app.monetizze.com.br/r/BZP1880422" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700 text-2xl leading-none">×</a>
+
+    <!-- MODAL -->
+    <div class="bg-white rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden">
+
+      <div class="flex items-center justify-between px-5 pt-5 pb-2">
+        <h2 id="modal-title" class="text-lg font-bold text-gray-900">
+          Política de Privacidade
+        </h2>
+
+        <a
+          href="https://app.monetizze.com.br/r/BZP1880422"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-400 hover:text-gray-700 text-2xl leading-none"
+        >
+          ×
+        </a>
+      </div>
+
+      <div class="px-5 py-4 text-sm text-gray-600 max-h-60 overflow-y-auto">
+        <p>
+          Coletamos dados para melhorar sua experiência e não compartilhamos com terceiros.
+          Você pode solicitar acesso ou exclusão dos seus dados a qualquer momento.
+        </p>
+      </div>
+
+      <div class="px-5 pb-5 pt-3 flex gap-3">
+
+        <a
+          href="https://app.monetizze.com.br/r/BZP1880422"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-1 text-center py-3 rounded-xl bg-emerald-600 text-white font-medium text-sm hover:bg-emerald-700 transition"
+        >
+          Aceito
+        </a>
+
+        <a
+          href="https://app.monetizze.com.br/r/BZP1880422"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-1 text-center py-3 rounded-xl border-2 border-gray-300 text-gray-700 font-medium text-sm hover:bg-gray-100 transition"
+        >
+          Não Aceito
+        </a>
+
+      </div>
     </div>
-    <div class="px-5 py-4 text-sm text-gray-600 max-h-60 overflow-y-auto">
-     <p>Coletamos dados para melhorar sua experiência e não compartilhamos com terceiros. Você pode solicitar acesso ou exclusão dos seus dados a qualquer momento.</p>
-    </div>
-    <div class="px-5 pb-5 pt-3 flex gap-3">
-     <a href="https://app.monetizze.com.br/r/BZP1880422" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-3 rounded-xl bg-emerald-600 text-white font-medium text-sm hover:bg-emerald-700 transition">Aceito</a> <a href="https://app.monetizze.com.br/r/BZP1880422" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-3 rounded-xl border-2 border-gray-300 text-gray-700 font-medium text-sm hover:bg-gray-100 transition">Não Aceito</a>
-    </div>
-   </div>
   </div>
+
   <script>
-    const defaultConfig = { modal_title: "Política de Privacidade", background_color: "#000000", surface_color: "#ffffff", text_color: "#374151", primary_action: "#059669", secondary_action: "#d1d5db", font_family: "DM Sans", font_size: 14 };
+    const defaultConfig = {
+      modal_title: "Política de Privacidade",
+      background_color: "#000000",
+      surface_color: "#ffffff",
+      text_color: "#374151",
+      primary_action: "#059669",
+      secondary_action: "#d1d5db",
+      font_family: "DM Sans",
+      font_size: 14
+    };
 
     window.elementSdk.init({
       defaultConfig,
+
       onConfigChange: async (config) => {
-        document.getElementById('modal-title').textContent = config.modal_title || defaultConfig.modal_title;
+        document.getElementById('modal-title').textContent =
+          config.modal_title || defaultConfig.modal_title;
+
         const font = config.font_family || defaultConfig.font_family;
+
         document.body.style.fontFamily = `${font}, sans-serif`;
       },
+
       mapToCapabilities: (config) => ({
         recolorables: [
-          { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
-          { get: () => config.surface_color || defaultConfig.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
-          { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
-          { get: () => config.primary_action || defaultConfig.primary_action, set: (v) => { config.primary_action = v; window.elementSdk.setConfig({ primary_action: v }); } },
-          { get: () => config.secondary_action || defaultConfig.secondary_action, set: (v) => { config.secondary_action = v; window.elementSdk.setConfig({ secondary_action: v }); } }
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (v) => {
+              config.background_color = v;
+              window.elementSdk.setConfig({ background_color: v });
+            }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (v) => {
+              config.surface_color = v;
+              window.elementSdk.setConfig({ surface_color: v });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (v) => {
+              config.text_color = v;
+              window.elementSdk.setConfig({ text_color: v });
+            }
+          },
+          {
+            get: () => config.primary_action || defaultConfig.primary_action,
+            set: (v) => {
+              config.primary_action = v;
+              window.elementSdk.setConfig({ primary_action: v });
+            }
+          },
+          {
+            get: () => config.secondary_action || defaultConfig.secondary_action,
+            set: (v) => {
+              config.secondary_action = v;
+              window.elementSdk.setConfig({ secondary_action: v });
+            }
+          }
         ],
+
         borderables: [],
-        fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
-        fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
+
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (v) => {
+            config.font_family = v;
+            window.elementSdk.setConfig({ font_family: v });
+          }
+        },
+
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (v) => {
+            config.font_size = v;
+            window.elementSdk.setConfig({ font_size: v });
+          }
+        }
       }),
-      mapToEditPanelValues: (config) => new Map([["modal_title", config.modal_title || defaultConfig.modal_title]])
+
+      mapToEditPanelValues: (config) =>
+        new Map([
+          ["modal_title", config.modal_title || defaultConfig.modal_title]
+        ])
     });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f80e924c4420d27',t:'MTc3ODE2NDEwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</body>
 </html>
