@@ -1,185 +1,224 @@
-<!doctype html>
-<html lang="pt-BR" class="h-full">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .backdrop {
-      background: rgba(0,0,0,0.6);
-    }
-
-    body {
-      box-sizing: border-box;
-    }
-  </style>
-
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <script src="/_sdk/data_sdk.js"></script>
-</head>
-
-<body class="h-full w-full relative overflow-hidden">
-
-  <!-- IMAGEM DE FUNDO -->
-  <img
-    src="https://i.imgur.com/NOqTcL3.jpeg"
-    alt="Background"
-    loading="lazy"
-    class="absolute inset-0 w-full h-full object-cover"
-    onerror="this.src='https://i.imgur.com/NOqTcL3.png';"
-  >
-
-  <!-- OVERLAY -->
-  <div class="absolute inset-0 backdrop flex items-center justify-center p-4">
-
-    <!-- MODAL -->
-    <div class="bg-white rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden">
-
-      <div class="flex items-center justify-between px-5 pt-5 pb-2">
-        <h2 id="modal-title" class="text-lg font-bold text-gray-900">
-          Política de Privacidade
-        </h2>
-
-        <a
-          href="https://app.monetizze.com.br/r/BZP1880422"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-gray-400 hover:text-gray-700 text-2xl leading-none"
-        >
-          ×
-        </a>
-      </div>
-
-      <div class="px-5 py-4 text-sm text-gray-600 max-h-60 overflow-y-auto">
-        <p>
-          Coletamos dados para melhorar sua experiência e não compartilhamos com terceiros.
-          Você pode solicitar acesso ou exclusão dos seus dados a qualquer momento.
-        </p>
-      </div>
-
-      <div class="px-5 pb-5 pt-3 flex gap-3">
-
-        <a
-          href="https://app.monetizze.com.br/r/BZP1880422"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex-1 text-center py-3 rounded-xl bg-emerald-600 text-white font-medium text-sm hover:bg-emerald-700 transition"
-        >
-          Aceito
-        </a>
-
-        <a
-          href="https://app.monetizze.com.br/r/BZP1880422"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex-1 text-center py-3 rounded-xl border-2 border-gray-300 text-gray-700 font-medium text-sm hover:bg-gray-100 transition"
-        >
-          Não Aceito
-        </a>
-
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const defaultConfig = {
-      modal_title: "Política de Privacidade",
-      background_color: "#000000",
-      surface_color: "#ffffff",
-      text_color: "#374151",
-      primary_action: "#059669",
-      secondary_action: "#d1d5db",
-      font_family: "DM Sans",
-      font_size: 14
-    };
-
-    window.elementSdk.init({
-      defaultConfig,
-
-      onConfigChange: async (config) => {
-        document.getElementById('modal-title').textContent =
-          config.modal_title || defaultConfig.modal_title;
-
-        const font = config.font_family || defaultConfig.font_family;
-
-        document.body.style.fontFamily = `${font}, sans-serif`;
-      },
-
-      mapToCapabilities: (config) => ({
-        recolorables: [
-          {
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (v) => {
-              config.background_color = v;
-              window.elementSdk.setConfig({ background_color: v });
-            }
-          },
-          {
-            get: () => config.surface_color || defaultConfig.surface_color,
-            set: (v) => {
-              config.surface_color = v;
-              window.elementSdk.setConfig({ surface_color: v });
-            }
-          },
-          {
-            get: () => config.text_color || defaultConfig.text_color,
-            set: (v) => {
-              config.text_color = v;
-              window.elementSdk.setConfig({ text_color: v });
-            }
-          },
-          {
-            get: () => config.primary_action || defaultConfig.primary_action,
-            set: (v) => {
-              config.primary_action = v;
-              window.elementSdk.setConfig({ primary_action: v });
-            }
-          },
-          {
-            get: () => config.secondary_action || defaultConfig.secondary_action,
-            set: (v) => {
-              config.secondary_action = v;
-              window.elementSdk.setConfig({ secondary_action: v });
-            }
-          }
-        ],
-
-        borderables: [],
-
-        fontEditable: {
-          get: () => config.font_family || defaultConfig.font_family,
-          set: (v) => {
-            config.font_family = v;
-            window.elementSdk.setConfig({ font_family: v });
-          }
-        },
-
-        fontSizeable: {
-          get: () => config.font_size || defaultConfig.font_size,
-          set: (v) => {
-            config.font_size = v;
-            window.elementSdk.setConfig({ font_size: v });
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Exclusiva - Últimas Unidades</title>
+    <!-- Fonte Poppins Moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset e Configurações Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-      }),
 
-      mapToEditPanelValues: (config) =>
-        new Map([
-          ["modal_title", config.modal_title || defaultConfig.modal_title]
-        ])
-    });
-  </script>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        /* Headline / Gatilho Mental */
+        .headline-container {
+            background-color: #111111;
+            width: 100%;
+            padding: 12px 0;
+            border-bottom: 2px solid #FFD700;
+            margin-bottom: 30px;
+        }
+
+        .headline {
+            color: #FFD700;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        /* Hero Image */
+        .product-image {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+            margin-bottom: 35px;
+        }
+
+        /* CTA - Botão de Ação */
+        .btn-cta {
+            display: block;
+            background-color: #FFD700;
+            color: #000000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.4rem;
+            padding: 18px 30px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.03);
+            background-color: #FFE44D;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Subtexto Escassez */
+        .scarcity-text {
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .scarcity-text strong {
+            color: #FFD700;
+        }
+
+        /* Selos de Segurança Realistas */
+        .security-container {
+            background: #111111;
+            border: 1px solid #222222;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .security-title {
+            font-size: 0.85rem;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .badges-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: #aaaaaa;
+        }
+
+        .badge-item svg {
+            width: 18px;
+            height: 18px;
+            fill: #FFD700;
+        }
+
+        /* Rodapé Fiscal */
+        footer {
+            width: 100%;
+            background-color: #0a0a0a;
+            border-top: 1px solid #1a1a1a;
+            padding: 25px 20px;
+            font-size: 0.75rem;
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        footer a {
+            color: #888888;
+            text-decoration: underline;
+        }
+
+        footer .links {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Headline de Topo -->
+    <div class="headline-container">
+        <h1 class="headline">⚠️ ATENÇÃO: ÚLTIMAS UNIDADES EM ESTOQUE</h1>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        
+        <!-- Imagem do Produto -->
+        <img src="https://imgur.com/J7UXZ4M.png" alt="Produto Oficial" class="product-image">
+
+        <!-- Botão de Chamada para Ação (CTA) -->
+        <a href="https://ev.braip.com/campanhas/cpa/cam44zv86" class="btn-cta">
+            Clique Aqui Para Garantir o Seu
+        </a>
+
+        <!-- Texto de Apoio à Escassez -->
+        <p class="scarcity-text">Devido à alta demanda de divulgação, restam <strong>menos de 12 unidades</strong> com desconto promocional.</p>
+
+        <!-- Certificação de Site e Compra Segura -->
+        <div class="security-container">
+            <div class="security-title">Ambiente Seguro e Homologado</div>
+            <div class="badges-grid">
+                <div class="badge-item">
+                    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                    <span>Criptografia SSL 256-bit</span>
+                </div>
+                <div class="badge-item">
+                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    <span>Compra 100% Segura</span>
+                </div>
+                <div class="badge-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    <span>Privacidade Protegida</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Rodapé com Informações Fiscais -->
+    <footer>
+        <div class="links">
+            <a href="#">Termos de Uso</a> | <a href="#">Políticas de Privacidade</a>
+        </div>
+        <p>
+            As informações e conteúdos deste site são de caráter estritamente informativo. Os resultados podem variar de pessoa para pessoa.<br>
+            <strong>[INSIRA SUA RAZÃO SOCIAL OU NOME DA EMPRESA]</strong><br>
+            CNPJ: [00.000.000/0001-00] | Contato: [seu-email@suapagina.com]<br>
+            © 2026 Todos os direitos reservados.
+        </p>
+    </footer>
 
 </body>
 </html>
