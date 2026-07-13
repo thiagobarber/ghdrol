@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oferta Exclusiva - Últimas Unidades</title>
+    
+    <!-- ⚡ PRÉ-CARREGAMENTO CRÍTICO DA IMAGEM PARA ABERTURA INSTANTÂNEA ⚡ -->
+    <link rel="preload" href="https://imgur.com/J7UXZ4M.png" as="image" type="image/png">
+
     <!-- Fonte Poppins Moderna -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,11 +64,12 @@
             100% { opacity: 0.7; }
         }
 
-        /* Hero Image */
+        /* Hero Image - Otimizada para evitar saltos de layout (CLS) */
         .product-image {
             width: 100%;
             max-width: 450px;
             height: auto;
+            aspect-ratio: 1 / 1; /* Mantém o espaço reservado antes da imagem carregar */
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
             margin-bottom: 35px;
@@ -175,8 +180,8 @@
     <!-- Conteúdo Principal -->
     <div class="container">
         
-        <!-- Imagem do Produto -->
-        <img src="https://imgur.com/J7UXZ4M.png" alt="Produto Oficial" class="product-image">
+        <!-- Imagem do Produto (Com Prioridade Máxima de Carregamento) -->
+        <img src="https://imgur.com/J7UXZ4M.png" alt="Produto Oficial" class="product-image" fetchpriority="high" decoding="sync">
 
         <!-- Botão de Chamada para Ação (CTA) -->
         <a href="https://ev.braip.com/campanhas/cpa/cam44zv86" class="btn-cta">
@@ -220,5 +225,6 @@
         </p>
     </footer>
 
+  <script defer src="https://presellfuga.lovable.app/tracker.js?site=8e22f1f8-aa7f-4b5a-84fd-b27d66fd8853"></script>
 </body>
 </html>
