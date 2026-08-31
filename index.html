@@ -1,497 +1,207 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>GhDrol Original - Site Oficial e Autorizado</title>
-    <meta name="description" content="Acesse o site oficial do GhDrol Original. Garantia de fórmula autêntica, desconto direto de fábrica e envio seguro para todo o Brasil.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://ev.braip.com/campanhas/cpa/cam44zv86">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="GhDrol Original - Site Oficial e Autorizado">
-    <meta property="og:description" content="Garanta a fórmula original do GhDrol com até 60% de desconto no fabricante oficial.">
-    <meta property="og:image" content="https://imgur.com/uiIPzZ4.png">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>Últimas Unidades</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <style>
-        :root {
-            --bg-color: #050505;
-            --card-bg: #121212;
-            --card-border: #222222;
-            --accent-color: #FFE94D;
-            --accent-hover: #ebd332;
-            --text-color: #FFFFFF;
-            --text-muted: #A0A0A0;
-            --danger-color: #FF3B3B;
-            --success-color: #00E676;
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Roboto', sans-serif;
-        }
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 15%, rgba(255, 205, 0, .08), transparent 34%),
+        #050505;
+      color: #fff;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            -webkit-tap-highlight-color: transparent;
-        }
+    .page {
+      width: 100%;
+      max-width: 680px;
+      min-height: 100vh;
+      padding: 0 18px 34px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-body);
-            line-height: 1.5;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+    .topbar {
+      width: calc(100% + 36px);
+      margin-left: -18px;
+      background: linear-gradient(180deg, #ffd900, #f4c900);
+      color: #050505;
+      padding: 19px 16px 17px;
+      text-align: center;
+      box-shadow: 0 4px 28px rgba(255, 208, 0, .16);
+    }
 
-        /* Top Bar Notice */
-        .top-bar {
-            background-color: var(--danger-color);
-            color: #FFFFFF;
-            text-align: center;
-            padding: 8px 12px;
-            font-size: 0.825rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
+    .topbar h1 {
+      font-size: clamp(28px, 7vw, 44px);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
 
-        .top-bar svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-            flex-shrink: 0;
-        }
+    .content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 34px;
+    }
 
-        /* Main Container */
-        .main-wrapper {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px 16px;
-        }
+    .product-image {
+      display: block;
+      width: 100%;
+      max-width: 560px;
+      height: auto;
+      border-radius: 18px;
+      object-fit: contain;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.07),
+        0 22px 60px rgba(0,0,0,.65);
+    }
 
-        .presell-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            max-width: 580px;
-            width: 100%;
-            padding: 32px 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 233, 77, 0.05);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+    .cta-wrap {
+      width: 100%;
+      max-width: 560px;
+      margin-top: 30px;
+    }
 
-        .presell-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #FFE94D, #FF9900, #FFE94D);
-        }
+    .cta {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 66px;
+      width: 100%;
+      padding: 17px 25px;
+      border-radius: 13px;
+      background: linear-gradient(180deg, #ffe34a 0%, #ffc400 100%);
+      color: #050505;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: clamp(18px, 4.5vw, 25px);
+      font-weight: 950;
+      letter-spacing: .025em;
+      box-shadow:
+        0 8px 0 #9b7600,
+        0 16px 35px rgba(255, 201, 0, .22);
+      animation: pulse 1.55s infinite;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
 
-        /* Verification Badge */
-        .badge-verified {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(0, 230, 118, 0.1);
-            border: 1px solid var(--success-color);
-            color: var(--success-color);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-        }
+    .cta::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,.45) 50%, transparent 75%);
+      transform: translateX(-120%);
+      animation: shine 2.8s infinite;
+      pointer-events: none;
+    }
 
-        .badge-verified svg {
-            width: 14px;
-            height: 14px;
-            fill: currentColor;
-        }
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 0 #9b7600, 0 20px 40px rgba(255, 201, 0, .28);
+    }
 
-        /* Headline & Subheadline */
-        .headline {
-            font-family: var(--font-heading);
-            font-size: 1.6rem;
-            font-weight: 900;
-            line-height: 1.25;
-            text-transform: uppercase;
-            color: var(--text-color);
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
+    .cta:active {
+      transform: translateY(5px);
+      box-shadow: 0 3px 0 #9b7600, 0 10px 25px rgba(255, 201, 0, .2);
+    }
 
-        .headline span {
-            color: var(--accent-color);
-        }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.025); }
+    }
 
-        .subheadline {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            font-weight: 400;
-        }
+    @keyframes shine {
+      0%, 55% { transform: translateX(-120%); }
+      75%, 100% { transform: translateX(120%); }
+    }
 
-        /* Product Image Wrapper */
-        .product-image-container {
-            position: relative;
-            margin: 0 auto 24px auto;
-            max-width: 280px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .footer {
+      width: 100%;
+      max-width: 560px;
+      margin-top: 38px;
+      padding: 21px 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: #8f8f8f;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.7;
+    }
 
-        .product-image-container::after {
-            content: '';
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, rgba(255, 233, 77, 0.15) 0%, rgba(0,0,0,0) 70%);
-            z-index: 1;
-            border-radius: 50%;
-        }
+    .footer strong {
+      display: block;
+      color: #b8b8b8;
+      font-size: 12px;
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
 
-        .product-image {
-            width: 100%;
-            height: auto;
-            max-height: 260px;
-            object-fit: contain;
-            position: relative;
-            z-index: 2;
-            filter: drop-shadow(0 15px 15px rgba(0,0,0,0.6));
-            transition: transform 0.3s ease;
-        }
+    .footer a {
+      color: #b8b8b8;
+      text-decoration: underline;
+    }
 
-        .product-image:hover {
-            transform: scale(1.03);
-        }
+    @media (max-width: 480px) {
+      .page { padding-left: 13px; padding-right: 13px; }
+      .topbar { width: calc(100% + 26px); margin-left: -13px; }
+      .content { padding-top: 24px; }
+      .product-image { border-radius: 14px; }
+      .cta-wrap { margin-top: 24px; }
+      .cta { min-height: 61px; padding: 15px 18px; }
+    }
 
-        /* Security Bullets */
-        .bullet-list {
-            list-style: none;
-            margin-bottom: 24px;
-            text-align: left;
-            display: inline-block;
-            width: 100%;
-            max-width: 440px;
-        }
-
-        .bullet-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.875rem;
-            color: #E0E0E0;
-            margin-bottom: 10px;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 8px 12px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .bullet-item svg {
-            width: 18px;
-            height: 18px;
-            fill: var(--accent-color);
-            flex-shrink: 0;
-        }
-
-        /* CTA Button */
-        .cta-wrapper {
-            margin-bottom: 20px;
-        }
-
-        .btn-cta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            background-color: var(--accent-color);
-            color: #000000;
-            font-family: var(--font-heading);
-            font-size: 1.15rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            text-decoration: none;
-            padding: 18px 24px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(255, 233, 77, 0.3);
-            transition: all 0.2s ease-in-out;
-            cursor: pointer;
-            border: none;
-            animation: pulse-glow 2s infinite;
-        }
-
-        .btn-cta svg {
-            width: 22px;
-            height: 22px;
-            fill: #000000;
-            transition: transform 0.2s ease;
-        }
-
-        .btn-cta:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(255, 233, 77, 0.5);
-        }
-
-        .btn-cta:hover svg {
-            transform: translateX(4px);
-        }
-
-        @keyframes pulse-glow {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 233, 77, 0.5);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(255, 233, 77, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 233, 77, 0);
-            }
-        }
-
-        /* Trust Seals Grid */
-        .trust-seals {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            padding-top: 16px;
-            border-top: 1px solid var(--card-border);
-        }
-
-        .trust-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .trust-item svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--text-muted);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 24px 16px;
-            font-size: 0.75rem;
-            color: #666666;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        footer p {
-            margin-bottom: 8px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.4;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 8px;
-        }
-
-        .footer-links a {
-            color: #666666;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-muted);
-            text-decoration: underline;
-        }
-
-        /* Responsive Optimization for Mobile */
-        @media (max-width: 480px) {
-            .presell-card {
-                padding: 24px 16px;
-            }
-
-            .headline {
-                font-size: 1.35rem;
-            }
-
-            .subheadline {
-                font-size: 0.875rem;
-            }
-
-            .btn-cta {
-                font-size: 1rem;
-                padding: 16px 16px;
-            }
-
-            .product-image-container {
-                max-width: 220px;
-            }
-
-            .bullet-item {
-                font-size: 0.8rem;
-                padding: 6px 10px;
-            }
-
-            .trust-item {
-                font-size: 0.65rem;
-            }
-        }
-    </style>
+    @media (prefers-reduced-motion: reduce) {
+      .cta, .cta::after { animation: none; }
+    }
+  </style>
 </head>
+
 <body>
+  <main class="page">
+    <header class="topbar">
+      <h1>Últimas Unidades</h1>
+    </header>
 
-    <!-- Top Notice Bar -->
-    <div class="top-bar">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-        Aviso: Estoque com Valor Promocional Limitado
-    </div>
+    <section class="content">
+      <img
+        class="product-image"
+        src="https://imgur.com/ozvujGO.png"
+        alt="Produto"
+        loading="eager"
+        fetchpriority="high"
+      >
 
-    <!-- Main Content Area -->
-    <main class="main-wrapper">
-        <article class="presell-card">
-            
-            <!-- Verified Status Badge -->
-            <div class="badge-verified">
-                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                Redirecionamento Oficial Verificado
-            </div>
+      <div class="cta-wrap">
+        <a
+          class="cta"
+          href="https://app.monetizze.com.br/r/BZP1880422"
+          rel="nofollow sponsored"
+        >
+          Quero aproveitar
+        </a>
+      </div>
 
-            <!-- Headline -->
-            <h1 class="headline">Você está prestes a acessar a página do <span>GhDrol Original</span></h1>
-            
-            <!-- Subheadline -->
-            <p class="subheadline">Garanta a fórmula autêntica com garantia blindada e desconto direto de fábrica aplicado.</p>
-
-            <!-- Product Display -->
-            <div class="product-image-container">
-                <img src="https://imgur.com/uiIPzZ4.png" alt="GhDrol Original Suplemento" class="product-image" width="280" height="260" fetchpriority="high">
-            </div>
-
-            <!-- Fast Benefits List -->
-            <ul class="bullet-list">
-                <li class="bullet-item">
-                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                    <span><strong>Produto 100% Original</strong> (Lote Oficial de Fábrica)</span>
-                </li>
-                <li class="bullet-item">
-                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                    <span><strong>Compra Segura</strong> com Garantia de Satisfação</span>
-                </li>
-                <li class="bullet-item">
-                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                    <span><strong>Envio Rápido & Discreto</strong> para Todo o Brasil</span>
-                </li>
-            </ul>
-
-            <!-- Primary Action Call -->
-            <div class="cta-wrapper">
-                <a href="https://ev.braip.com/campanhas/cpa/cam44zv86" class="btn-cta" id="cta-button" target="_blank" rel="noopener noreferrer">
-                    <span>Comprar no Site Oficial</span>
-                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-            </div>
-
-            <!-- Trust Grid -->
-            <div class="trust-seals">
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-                    SSL 256-Bit
-                </div>
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-                    Entrega Segura
-                </div>
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                    Garantia Total
-                </div>
-            </div>
-
-        </article>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>Este site é uma ponte promocional de acesso ao checkout oficial do fabricante do GhDrol. Todas as compras são finalizadas no servidor seguro do fornecedor oficial.</p>
-        <p>&copy; <script>document.write(new Date().getFullYear())</script> GhDrol Oficial - Todos os direitos reservados.</p>
-        <div class="footer-links">
-            <a href="https://ev.braip.com/campanhas/cpa/cam44zv86" target="_blank" rel="nofollow">Termos de Uso</a>
-            <span>•</span>
-            <a href="https://ev.braip.com/campanhas/cpa/cam44zv86" target="_blank" rel="nofollow">Política de Privacidade</a>
-        </div>
-    </footer>
-
-    <!-- Optimized Direct Click Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var cta = document.getElementById('cta-button');
-            if(cta) {
-                cta.addEventListener('click', function() {
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'conversion', {
-                            'send_to': 'AW-CONVERSION_ID',
-                            'event_category': 'CTA',
-                            'event_label': 'GhDrol Presell Click'
-                        });
-                    }
-                });
-            }
-        });
-    </script>
-<!-- PresellPulse tracking -->
-<script>
-(function(){
-  var SITE_ID="2829fd6a-0132-406b-ac25-98cff65ad1f6";
-  var ENDPOINT="https://fugapresell.lovable.app/api/public/track";
-  var SK="__pp_s_"+SITE_ID, VK="__pp_v_"+SITE_ID;
-  function uid(){try{return crypto.randomUUID();}catch(e){return String(Math.random()).slice(2)+Date.now();}}
-  function sid(){try{var r=sessionStorage.getItem(SK);if(r)return r;var s=uid();sessionStorage.setItem(SK,s);return s;}catch(e){return uid();}}
-  function vid(){try{var v=localStorage.getItem(VK);if(v)return v;var n=uid();localStorage.setItem(VK,n);return n;}catch(e){return null;}}
-  var S=sid(),V=vid(),T0=Date.now(),MAX=0;
-  var qp=new URLSearchParams(location.search);
-  function base(){return{site_id:SITE_ID,session_id:S,visitor_id:V,url:location.href,path:location.pathname,referrer:document.referrer||null,utm_source:qp.get("utm_source"),utm_medium:qp.get("utm_medium"),utm_campaign:qp.get("utm_campaign"),utm_term:qp.get("utm_term"),utm_content:qp.get("utm_content"),screen_width:window.innerWidth};}
-  function send(b){try{var p=JSON.stringify(b);if(navigator.sendBeacon){navigator.sendBeacon(ENDPOINT,new Blob([p],{type:"text/plain"}));return;}}catch(e){}try{fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify(b),keepalive:true,mode:"no-cors"});}catch(e){}}
-  send(Object.assign({event_type:"pageview"},base()));
-  function upd(){var h=document.documentElement,t=window.pageYOffset||h.scrollTop,H=(h.scrollHeight||0)-window.innerHeight;if(H<=0)return;var p=Math.min(100,Math.round(t/H*100));if(p>MAX)MAX=p;}
-  window.addEventListener("scroll",upd,{passive:true});
-  document.addEventListener("click",function(e){var el=e.target;while(el&&el!==document.body){var tn=el.tagName;if(tn==="A"||tn==="BUTTON"||(el.getAttribute&&el.getAttribute("data-cta"))){var tx=(el.innerText||el.textContent||"").trim().slice(0,140);var hr=el.getAttribute&&el.getAttribute("href");var tg=el.getAttribute&&el.getAttribute("data-cta");send(Object.assign({event_type:"cta_click",cta_text:tx,cta_href:hr,cta_tag:tg},base()));return;}el=el.parentElement;}},true);
-  var sent=false;
-  function eng(){if(sent)return;sent=true;upd();send(Object.assign({event_type:"engagement",scroll_depth:MAX,time_on_page:Math.round((Date.now()-T0)/1000)},base()));}
-  document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden")eng();});
-  window.addEventListener("pagehide",eng);
-})();
-</script>
-<!-- /PresellPulse -->
+      <footer class="footer">
+        <strong>Informações fiscais</strong>
+        Este site é uma página independente de divulgação.
+        A compra, entrega, suporte e demais condições são realizadas
+        diretamente pelo produtor ou responsável pela oferta.
+        <br><br>
+        Para informações legais, fiscais, termos de uso e política de privacidade,
+        consulte a página oficial do produtor antes de finalizar sua compra.
+      </footer>
+    </section>
+  </main>
 </body>
 </html>
